@@ -1,6 +1,5 @@
 package com.redhat.coolstore.service;
 
-import java.io.Serializable;
 import java.util.List;
 
 import com.redhat.coolstore.model.Product;
@@ -11,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/services")
 public class CatalogEndpoint {
 
     private CatalogRepository repository;
@@ -22,7 +21,7 @@ public class CatalogEndpoint {
     }
 
     @ResponseBody
-    @GetMapping("/catalog")
+    @GetMapping("/products")
     public List<Product> listAll() {
         return repository.list();
     }
